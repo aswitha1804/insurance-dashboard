@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Insurance SafeGuard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+</head>
+<body>
+    <nav class="navbar glass-effect">
+        <div class="nav-brand">
+            <i class="fas fa-chart-line"></i>
+            <span>Insure<span class="highlight">Dash</span></span>
+        </div>
+        <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </div>
+        <div class="nav-links">
+            <a href="home.html"><i class="fas fa-home"></i> <span>Home</span></a>
+            <a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> <span>Contact</span></a>
+            <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+        </div>
+        <div class="menu-toggle" id="mobileMenu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <div class="dashboard-header">
+            <div>
+                <h1><i class="fas fa-chart-pie"></i> Analytics Command Center</h1>
+                <p>Real-time insurance intelligence & performance metrics</p>
+            </div>
+            <div class="date-time" id="dateTime"></div>
+        </div>
+
+        <!-- KPI Cards Row -->
+        <div class="kpi-grid">
+            <div class="kpi-card glass-effect">
+                <div class="kpi-icon"><i class="fas fa-file-invoice"></i></div>
+                <div class="kpi-info">
+                    <span class="kpi-value" id="totalClaims">200</span>
+                    <span class="kpi-label">Total Claims</span>
+                </div>
+                <div class="kpi-trend positive"><i class="fas fa-arrow-up"></i> +12%</div>
+            </div>
+            <div class="kpi-card glass-effect">
+                <div class="kpi-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="kpi-info">
+                    <span class="kpi-value" id="settledClaims">136</span>
+                    <span class="kpi-label">Settled Claims</span>
+                </div>
+                <div class="kpi-trend positive"><i class="fas fa-arrow-up"></i> +8%</div>
+            </div>
+            <div class="kpi-card glass-effect">
+                <div class="kpi-icon"><i class="fas fa-clock"></i></div>
+                <div class="kpi-info">
+                    <span class="kpi-value" id="avgSettleDays">32</span>
+                    <span class="kpi-label">Avg Days to Settle</span>
+                </div>
+                <div class="kpi-trend negative"><i class="fas fa-arrow-down"></i> -5%</div>
+            </div>
+            <div class="kpi-card glass-effect">
+                <div class="kpi-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="kpi-info">
+                    <span class="kpi-value" id="fraudClaims">30</span>
+                    <span class="kpi-label">Fraud Flagged</span>
+                </div>
+                <div class="kpi-trend negative"><i class="fas fa-arrow-up"></i> +3%</div>
+            </div>
+            <div class="kpi-card glass-effect">
+                <div class="kpi-icon"><i class="fas fa-star"></i></div>
+                <div class="kpi-info">
+                    <span class="kpi-value" id="avgSatisfaction">3.2</span>
+                    <span class="kpi-label">Customer Satisfaction</span>
+                </div>
+                <div class="kpi-trend positive"><i class="fas fa-arrow-up"></i> +0.4</div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="charts-row">
+            <div class="chart-card glass-effect">
+                <h3><i class="fas fa-chart-bar"></i> Claims by Policy Type</h3>
+                <canvas id="claimsByTypeChart" height="250"></canvas>
+            </div>
+            <div class="chart-card glass-effect">
+                <h3><i class="fas fa-chart-line"></i> Monthly Claims Trend</h3>
+                <canvas id="monthlyTrendChart" height="250"></canvas>
+            </div>
+        </div>
+
+        <div class="charts-row">
+            <div class="chart-card glass-effect">
+                <h3><i class="fas fa-chart-pie"></i> Claim Status Distribution</h3>
+                <canvas id="statusPieChart" height="250"></canvas>
+            </div>
+            <div class="chart-card glass-effect">
+                <h3><i class="fas fa-chart-line"></i> Agent Performance Top 5</h3>
+                <canvas id="agentPerformanceChart" height="250"></canvas>
+            </div>
+        </div>
+
+        <!-- IBM Cognos Launch Section -->
+        <div class="cognos-section glass-effect">
+            <div class="cognos-content">
+                <div>
+                    <i class="fas fa-chart-line cognos-icon"></i>
+                    <h3>IBM Cognos Analytics Dashboard</h3>
+                    <p>Deep dive into advanced analytics, fraud detection patterns, and predictive insights</p>
+                    <button onclick="window.open('https://ap2.ca.analytics.ibm.com/bi/?perspective=dashboard&amp;pathRef=.my_folders%2Fproject_dashboard&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;action=view&amp;mode=dashboard&amp;subView=model0000019d63b9eed4_00000000&amp;nav_filter=true', '_blank')" class="cognos-btn">
+                        Launch Full Dashboard <i class="fas fa-external-link-alt"></i>
+                    </button>
+                </div>
+                <div class="cognos-preview">
+                    <i class="fas fa-chart-simple"></i>
+                    <i class="fas fa-chart-gantt"></i>
+                    <i class="fas fa-chart-scatter"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Claims Table -->
+        <div class="data-table glass-effect">
+            <h3><i class="fas fa-table"></i> Recent Claims Activity</h3>
+            <div class="table-wrapper">
+                <table id="recentClaimsTable">
+                    <thead>
+                        <tr><th>Claim ID</th><th>Policy Type</th><th>Claim Amount</th><th>Status</th><th>Days to Settle</th><th>Fraud</th></tr>
+                    </thead>
+                    <tbody id="recentClaimsBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Insurance SafeGuard — Next-Gen Insurance Analytics Platform</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Sample data for charts (based on your CSV)
+        const claimsData = {
+            byType: [52, 48, 45, 55],
+            types: ['Health', 'Motor', 'Life', 'Property'],
+            monthly: [18, 22, 25, 30, 28, 35, 42, 38, 45, 50, 48, 52],
+            months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            status: { Settled: 136, Pending: 42, Rejected: 22 },
+            agents: ['Agent_Priya', 'Agent_Suresh', 'Agent_Kiran', 'Agent_Ananya', 'Agent_Deepak'],
+            agentRatings: [4.2, 3.8, 3.5, 3.9, 3.6]
+        };
+
+        // Claims by Type Chart
+        new Chart(document.getElementById('claimsByTypeChart'), {
+            type: 'bar',
+            data: { labels: claimsData.types, datasets: [{ label: 'Number of Claims', data: claimsData.byType, backgroundColor: ['#0f6b8c', '#1a8fb0', '#2aaccf', '#3ec1e0'], borderRadius: 8 }] },
+            options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'bottom' } } }
+        });
+
+        // Monthly Trend Chart
+        new Chart(document.getElementById('monthlyTrendChart'), {
+            type: 'line',
+            data: { labels: claimsData.months, datasets: [{ label: 'Claims Filed', data: claimsData.monthly, borderColor: '#0f6b8c', backgroundColor: 'rgba(15,107,140,0.1)', fill: true, tension: 0.4, pointRadius: 4, pointBackgroundColor: '#0f6b8c' }] },
+            options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'bottom' } } }
+        });
+
+        // Status Pie Chart
+        new Chart(document.getElementById('statusPieChart'), {
+            type: 'doughnut',
+            data: { labels: Object.keys(claimsData.status), datasets: [{ data: Object.values(claimsData.status), backgroundColor: ['#28a745', '#ffc107', '#dc3545'], borderWidth: 0 }] },
+            options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { position: 'bottom' } } }
+        });
+
+        // Agent Performance Chart
+        new Chart(document.getElementById('agentPerformanceChart'), {
+            type: 'radar',
+            data: { labels: claimsData.agents, datasets: [{ label: 'Performance Rating', data: claimsData.agentRatings, backgroundColor: 'rgba(15,107,140,0.2)', borderColor: '#0f6b8c', pointBackgroundColor: '#0f6b8c', pointBorderColor: '#fff', pointRadius: 5 }] },
+            options: { responsive: true, maintainAspectRatio: true, scales: { r: { beginAtZero: true, max: 5, ticks: { stepSize: 1 } } } }
+        });
+
+        // Populate recent claims table
+        const recentClaims = [
+            ['CLM00100', 'Health', '₹464,514', 'Settled', '48', 'No'],
+            ['CLM00099', 'Life', '₹830,644', 'Rejected', '34', 'No'],
+            ['CLM00098', 'Health', '₹162,510', 'Pending', '4', 'No'],
+            ['CLM00097', 'Motor', '₹352,315', 'Settled', '30', 'No'],
+            ['CLM00096', 'Life', '₹329,022', 'Rejected', '34', 'Yes']
+        ];
+        const tbody = document.getElementById('recentClaimsBody');
+        recentClaims.forEach(claim => {
+            const row = tbody.insertRow();
+            claim.forEach((cell, i) => {
+                const td = row.insertCell();
+                if (i === 3) td.innerHTML = `<span class="status-badge status-${cell.toLowerCase()}">${cell}</span>`;
+                else if (i === 5) td.innerHTML = cell === 'Yes' ? '<i class="fas fa-shield-alt fraud-icon"></i>' : '<i class="fas fa-check-circle safe-icon"></i>';
+                else td.textContent = cell;
+            });
+        });
+
+        // Update KPI values with animation
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.textContent = Math.floor(progress * (end - start) + start);
+                if (progress < 1) window.requestAnimationFrame(step);
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        animateValue(document.getElementById('totalClaims'), 0, 200, 1000);
+        animateValue(document.getElementById('settledClaims'), 0, 136, 1000);
+        animateValue(document.getElementById('avgSettleDays'), 0, 32, 1000);
+        animateValue(document.getElementById('fraudClaims'), 0, 30, 1000);
+        animateValue(document.getElementById('avgSatisfaction'), 0, 3.2, 1000);
+
+        // Date/Time display
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById('dateTime').innerHTML = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + ' | ' + now.toLocaleTimeString();
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>

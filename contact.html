@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Insurance SafeGuard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar glass-effect">
+        <div class="nav-brand">
+            <i class="fas fa-chart-line"></i>
+            <span>Insure<span class="highlight">Dash</span></span>
+        </div>
+        <div class="theme-toggle" id="themeToggle4">
+            <i class="fas fa-moon"></i>
+        </div>
+        <div class="nav-links">
+            <a href="home.html"><i class="fas fa-home"></i> <span>Home</span></a>
+            <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a>
+            <a href="contact.html" class="active"><i class="fas fa-envelope"></i> <span>Contact</span></a>
+            <a href="#" id="logoutBtn4"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+        </div>
+        <div class="menu-toggle" id="mobileMenu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <main>
+        <div class="contact-wrapper">
+            <div class="contact-info-enhanced glass-effect">
+                <h2><i class="fas fa-headset"></i> Let's Talk</h2>
+                <p>Have questions about our analytics platform? Our team is here to help.</p>
+                <div class="contact-details-enhanced">
+                    <div><i class="fas fa-map-marker-alt"></i> 101 Analytics Avenue, Bengaluru, India</div>
+                    <div><i class="fas fa-phone-alt"></i> +91 80 1234 5678</div>
+                    <div><i class="fas fa-envelope"></i> support@insuresafeguard.com</div>
+                </div>
+                <div class="business-hours">
+                    <h4><i class="fas fa-clock"></i> Business Hours</h4>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
+                    <p>Saturday: 10:00 AM - 2:00 PM IST</p>
+                </div>
+                <div class="social-icons-enhanced">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="contact-form-enhanced glass-effect">
+                <h3>Send us a message</h3>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <input type="text" placeholder="Full name" required>
+                        <input type="email" placeholder="Email address" required>
+                    </div>
+                    <input type="text" placeholder="Subject">
+                    <textarea rows="5" placeholder="How can we help you?"></textarea>
+                    <button type="submit" class="btn-primary">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Insurance SafeGuard — Next-Gen Insurance Analytics Platform</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
